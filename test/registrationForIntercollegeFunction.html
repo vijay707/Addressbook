@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body bgcolor="#98FB98">
+	<br>
+	<font face="arial" color="#00baff">
+		<center><h2>KG College of Arts and Science</h2></center>
+        <center><h3>Inter-college Competition-2018-19</h3></center>
+		<center><h4>Registration Form</h4></center></font>
+	<font face="arial" color="#FF4500">
+		<center><h5><i>(Registration is  compulsory. Last date for registration is 25th feb*)</i></h5></center><br>
+ <table align="center">
+      <form id="myform" name="myform">
+                <tr>
+                    <td>Name *</td>
+                    <td><input type="text" placeholder="Name" size="35" /></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                
+                    <td>Roll number *</td>
+                    <td><input type="text" placeholder="Rollno" size="35" /></td>
+                </tr>
+                <tr></tr>
+                 <tr>
+                
+                    <td>Email</td>
+                    <td><input type="text" placeholder="Email" size="35" /></td>
+                </tr>
+                <tr></tr>
+                <tr>
+
+                    <td>Gender</td>
+                    <td><input type="radio" name="gender" value="male" checked> Male
+                    <input type="radio" name="gender" value="female"> Female<br></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                 <td>Department of study</td>
+                    <td><select name='Department'>
+<option value='1'>BCA</option>
+<option value='2'>B.COM</option>
+<option value='3'>B.SC CS</option>
+<option value='4'>B.SC IT</option>
+<option value='5'>B.SC CT</option>
+<option value='6'>B.SC MATHS</option>
+<option value='7'>BBA</option>
+<option value='8'>B.COM IT</option>
+<option value='9'>BA ENGLISH</option>
+<option value='10'>B.COM CA</option>
+<option value='11'>B.COM PA</option>
+</select>
+</td></tr>
+<tr></tr>
+<tr>
+    <td>Cultural Events</td>
+    <td><select name="Cultural">
+<option value='1'>Dance</option>
+<option value='2'>Drama</option>
+<option value='3'>DJ</option>
+<option value='4'>Dubsmash</option>
+<option value='5'>Music</option>
+<option value='6'>Singing</option>
+<option value='7'>Painting</option>
+<option value='8'>Mime</option>
+<option value='9'>Designing</option>
+<option value='10'>Fashion Show</option>
+<option value='11'>Rockband</option>
+</select>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Technical Events</td>
+    <td><select name="Technical">
+<option value='1'>Coding</option>
+<option value='2'>Debugging</option>
+<option value='3'>Paper Presentation</option>
+<option value='4'>Poster Presentation</option>
+<option value='5'>Project Presentation</option>
+<option value='6'>Programming</option>
+<option value='7'>Quiz</option>
+<option value='8'>Robotics</option>
+<option value='9'>Contraption</option>
+<option value='10'>Workshops</option>
+<option value='11'>CAD Designing</option>
+</select>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td>Sports Events</td>
+    <td><select name="Sports">
+<option value='1'>Athletics</option>
+<option value='2'>Badminton</option>
+<option value='3'>Basketball</option>
+<option value='4'>Carrom</option>
+<option value='5'>Cricket</option>
+<option value='6'>Chess</option>
+<option value='7'>Football</option>
+<option value='8'>Hockey</option>
+<option value='9'>Swimming</option>
+<option value='10'>Throwball</option>
+<option value='11'>Table Tennis</option>
+</select>
+</td>
+</tr>
+<tr></tr>
+<tr>
+                    <td></td>
+                    <td><button type="submit" value="Submit" onclick="myFunction()">Submit</button>
+                    <button type="reset" value="Reset" onclick="resetform()">Reset</button></td></tr>
+                </form>
+                <script>
+function myFunction() {
+    alert("Thankyou! Registration Success");
+}
+function resetform() {
+document.getElementById("myform").reset();
+}
+</script>
+
+</table>
+</font>
+</body>
+</html>

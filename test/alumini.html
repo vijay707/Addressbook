@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alumini Registration</title>
+</head>
+<body bgcolor="	#C0C0C0">
+	<br>
+	<font face="arial" color="brown">
+		<center><h2>Registration Form</h2></center>
+		<center><h4>Alumni Evening 12th March at 4.30pm</h4></center></font>
+	<font face="arial" color="#FF4500">
+		<center><h5><i>(Registration is  compulsory. Last date for registration is 25th feb*)</i></h5></center><br>
+ <table align="center">
+    <form id="myform" name="myform">
+                <tr>
+                    <td>Name *</td>
+                    <td><input type="text" placeholder="Name" size="35" id="name" /></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                
+                    <td>Email *</td>
+                    <td><input type="text" placeholder="Email" size="35" id="email"/></td>
+                </tr>
+                <tr></tr>
+                 <tr>
+                
+                    <td>Mobile/Phone</td>
+                    <td><input type="text" placeholder="Mobile/Phone" size="35" id="phno"/></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                 <td>Department of study</td>
+                    <td><select name='Department' id="dept">
+<option value='1'>BCA</option>
+<option value='2'>B.COM</option>
+<option value='3'>B.SC CS</option>
+<option value='4'>B.SC IT</option>
+<option value='5'>B.SC CT</option>
+<option value='6'>B.SC MATHS</option>
+<option value='7'>BBA</option>
+<option value='8'>B.COM IT</option>
+<option value='9'>BA ENGLISH</option>
+<option value='10'>B.COM CA</option>
+<option value='11'>B.COM PA</option>
+                </tr>
+                <tr></tr>
+                <tr>
+                
+                    <td>Year of Passing *</td>
+                    <td><input type="text" placeholder="Year of Passing" size="15" id="yof"/></td>
+                </tr>
+                <tr></tr>
+                <tr>
+
+                	<td>Date of Birth *</td>
+<td>Day
+<select name='day' id="day">
+<option value='1'>1</option>
+<option value='2'>2</option>
+<option value='3'>3</option>
+<option value='4'>4</option>
+<option value='5'>5</option>
+<option value='6'>6</option>
+<option value='7'>7</option>
+<option value='8'>8</option>
+<option value='9'>9</option>
+<option value='10'>10</option>
+<option value='11'>11</option>
+<option value='12'>12</option>
+<option value='13'>13</option>
+<option value='14'>14</option>
+<option value='15'>15</option>
+<option value='16'>16</option>
+<option value='17'>17</option>
+<option value='18'>18</option>
+<option value='19'>19</option>
+<option value='20'>20</option>
+<option value='21'>21</option>
+<option value='22'>22</option>
+<option value='23'>23</option>
+<option value='24'>24</option>
+<option value='25'>25</option>
+<option value='26'>26</option>
+<option value='27'>27</option>
+<option value='28'>28</option>
+<option value='29'>29</option>
+<option value='30'>30</option>
+<option value='31'>31</option>
+</select>
+
+
+Month
+<select name='month' id="month">
+<option value='1'>January</option>
+<option value='2'>Feburary</option>
+<option value='3'>March</option>
+<option value='4'>April</option>
+<option value='5'>May</option>
+<option value='6'>June</option>
+<option value='7'>July</option>
+<option value='8'>August</option>
+<option value='9'>September</option>
+<option value='10'>October</option>
+<option value='11'>November</option>
+<option value='12'>December</option>
+</select>
+Year
+<select name='Year' id="year">
+<option value='1991'>1991</option>
+<option value='1992'>1992</option>
+<option value='1993'>1993</option>
+<option value='1994'>1994</option>
+<option value='1995'>1995</option>
+<option value='1996'>1996</option>
+<option value='1997'>1997</option>
+<option value='1998'>1998</option>
+<option value='1999'>1999</option>
+<option value='2000'>2000</option>
+<option value='2001'>2002</option>
+<option value='2002'>2003</option>
+<option value='2003'>2004</option>
+<option value='2004'>2005</option>
+<option value='2005'>2006</option>
+</select></td></tr>
+<tr></tr>
+<tr>
+                
+                    <td>Profession *</td>
+                    <td><input type="text" placeholder="Profession" size="35" id="Profession"/></td>
+                </tr>
+                <tr></tr>
+                <td>Experience</td>
+                    <td><select name='Experience' id="xp">
+<option value='1'>1 year</option>
+<option value='2'>2 years</option>
+<option value='3'>3 years</option>
+<option value='4'>4 years</option>
+<option value='5'>5 years</option>
+<option value='6'>6 years</option>
+<option value='7'>7 years</option>
+
+                </tr>
+                <tr></tr>
+<td>Marital Status *</td>
+                    <td><input type="radio" id="single" name="Marital Status" value="Single" checked> Single
+  						<input type="radio" id="married" name="Marital Status" value="Married"> Married<br></td>
+                </tr>
+                <tr></tr>
+                <tr>
+                
+                    <td>Address *</td>
+                    <td><textarea rows="4" cols="35" id="address"></textarea></td>
+                </tr>
+                <tr></tr>
+                 <tr>
+                
+                    <td>Official Address</td>
+                    <td><textarea rows="4" cols="35" id="oaddress"></textarea></td>
+                </tr>
+                <tr></tr>
+
+                <tr>
+                	<td><h5><i>* Limited seats are available</i></h5></td></tr>
+                <tr>
+                	<td><h5><i>Note-Event is only for<br>the Alumni.Students are<br>requested to not register for event.</i></h5></td></tr>
+                	<tr></tr>
+                <tr>
+                	<td></td>
+                	<td><button type="submit" value="Submit" onclick="myFunction()">Submit</button>
+                	<button type="reset" value="Reset" onclick="resetform()">Reset</button></td></tr>
+                </form>
+                <script>
+function myFunction() {
+    alert("Thankyou! Registration Success");
+}
+function resetform() {
+document.getElementById("myform").reset();
+}
+</script>
+
+
+
+
+
+</body>
+</html>
