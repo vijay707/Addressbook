@@ -1,0 +1,50 @@
+Private Sub Backcolor_Click()
+cd.ShowColor
+rtb.Backcolor = cd.Color
+
+End Sub
+
+Private Sub Exit_Click()
+End
+End Sub
+
+Private Sub Font_Click()
+cd.Flags = cdlCFBoth Or cdleffects
+cd.ShowFont
+rtb.SelBold = cd.FontBold
+rtb.SelItalic = cd.FontItalic
+rtb.SelFontName = cd.FontName
+rtb.SelStrikeThru = cd.FontStrikethru
+rtb.SelUnderline = cd.FontUnderline
+rtb.SelFontSize = cd.FontSize
+
+End Sub
+
+Private Sub Fontcolor_Click()
+cd.ShowColor
+rtb.SelColor = cd.Color
+
+End Sub
+
+Private Sub New_Click()
+rtb.Text = " "
+rtb.Backcolor = vbYellow
+End Sub
+
+Private Sub RichTextBox1_Change()
+
+End Sub
+
+Private Sub Open_Click()
+cd.ShowOpen
+cd.Filter = "textfiles(*.rtb)/*.rtb"
+rtb.LoadFile (cd.FileName)
+
+End Sub
+
+Private Sub Save_Click()
+cd.ShowSave
+cd.Filter = "textfiles(*.rtb)/*.rtb"
+rtb.SaveFile (cd.FileName)
+
+End Sub
