@@ -1,3 +1,5 @@
+ create table bankmaster(accno number primary key,uname varchar2(100),acctype varchar2(100),balance number);
+ //insert 5 rows
 declare
 outofbalance exception;
 a bankmaster.accno%type;
