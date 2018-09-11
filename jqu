@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jquery</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+  $("#sec2").hide();
+    $("#btns").click(function(){
+      var uname = $('#uname').val();
+      var pwd = $('#pwd').val();
+      if (uname== "admin" && pwd=="1234") {
+       window.location.replace("success.html");
+    }
+    else{
+          window.location.replace("error.html");
+    }
+    });
+});
+  </script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5">
+      <label for="uname">Username</label>
+      <input type="text" class="form-control" id="uname" name="uname">
+      <label for="pwd">Password</label>
+      <input type="password" class="form-control" id="pwd" name="pwd"><br>
+      <div class="form-group">
+      <button type="submit" class="btn btn-danger" id="btns">Submit</button>
+    </div>
+    </div>
+    <div class="col-sm-1"></div>
+     <div class="row">
+    <div class="col-sm-5" id="sec2">
+      <label for="unames">Username</label>
+      <input type="text" class="form-control" id="uname" name="uname">
+      <label for="pwds">Password</label>
+      <input type="password" class="form-control" id="pwd" name="pwd"><br>
+      <div class="form-group">
+      <button type="submit" class="btn btn-danger" id="btn">Submit</button></div>
+    </div>
+  </div>
+</div>
+</div>
+
+</body>
+<style type="text/css">
+  .container{
+    background-color: #c0fff0;
+    margin-top: 20px;
+    border-radius: 15px 15px 15px 15px;
+  }
+  .container:hover{
+    background-color: #f0fcfa;
+    transition: 0.7s;
+  }
+</style>
+</html>
