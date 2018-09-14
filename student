@@ -18,12 +18,12 @@ rs!regno = Text1.Text
 rs!Name = Text2.Text
 rs!dob = DTPicker1.Value
 If Option1.Value = True Then
-rs!gender = "male"
+rs!Gender = "male"
 ElseIf Option2.Value = True Then
-rs!gender = "female"
+rs!Gender = "female"
 End If
 rs!total = Text3.Text
-rs!percentage = Text4.Text
+rs!Percentage = Text4.Text
 rs.Update
 con.Execute "commit"
 rs.Close
@@ -33,6 +33,64 @@ End If
 End Sub
 
 
+
+Private Sub Command2_Click()
+Set rs = New ADODB.Recordset
+rs.Open "select * from details where regno='" & Text1.Text & "'", con, adOpenKeyset, adLockReadOnly, adCmdText
+If rs.RecordCount <> 0 Then
+Text2.Text = rs!Name
+If rs!Gender = "male" Then
+Option1.Value = True
+ElseIf Trim(rs!Gender) = "female" Then
+Option2.Value = True
+End If
+DTPicker1.Value = rs!dob
+Text3.Text = rs!total
+Text4.Text = rs!Percentage
+MsgBox "Viewed Successfully"
+Else
+MsgBox "Student regno not exist"
+End If
+rs.Close
+Set rs = Nothing
+End Sub
+
+Private Sub Command3_Click()
+If (MsgBox("Are you sure to delete..", vbYesNo) = vbYes) Then
+Set rs = New ADODB.Recordset
+rs.Open "select * from details where regno = '" & Text1.Text & "'", con, adOpenKeyset, adLockPessimistic, adCmdText
+rs.Delete
+con.Execute "commit"
+rs.Close
+Set rs = Nothing
+MsgBox "Deleted Successfully"
+Command5_Click
+End If
+
+End Sub
+
+Private Sub Command4_Click()
+If (MsgBox("Are you sure to edit...", vbYesNo) = vbYes) Then
+Set rs = New ADODB.Recordset
+rs.Open "select * from details where regno = '" & Text1.Text & "'", con, adOpenKeyset, adLockPessimistic, adCmdText
+rs!regno = Trim(Text1.Text)
+rs!Name = Trim(Text2.Text)
+If Option1.Value = True Then
+rs!Gender = "Male"
+ElseIf Option2.Value = True Then
+rs!Gender = "Female"
+End If
+rs!dob = DTPicker1.Value
+rs!total = Val(Trim(Text3.Text))
+rs!Percentage = Val(Trim(Text4.Text))
+rs.Update
+con.Execute "commit"
+rs.Close
+Set rs = Nothing
+MsgBox ("Edited Succesfully...")
+
+End If
+End Sub
 
 Private Sub Command5_Click()
 Text1.Text = ""
@@ -51,6 +109,7 @@ con.Open "Provider=MSDAORA.1;Password=bca3c55;User ID=bca3c55;Data Source=cas;Pe
 con.CursorLocation = adUseClient
 MsgBox "Connection Established"
 End Sub
+
 
 
 
