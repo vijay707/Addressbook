@@ -1,0 +1,68 @@
+Dim con As ADODB.Connection
+Dim rs As ADODB.Recordset
+Private Sub Command1_Click()
+Set rs = New ADODB.Recordset
+Dim a As Integer
+a = Text1.Text
+rs.Open "Select * from details where regno='" & Text1.Text & "'", con, adOpenKeyset, adLockReadOnly, adCmdText
+If rs.RecordCount <> 0 Then
+MsgBox "Student regno already exist..."
+rs.Close
+Set rs = Nothing
+Exit Sub
+Else
+Set rs = New ADODB.Recordset
+rs.Open "Select * from details where regno='" & Text1.Text & "'", con, adOpenKeyset, adLockPessimistic, adCmdText
+rs.AddNew
+rs!regno = Text1.Text
+rs!Name = Text2.Text
+rs!dob = DTPicker1.Value
+If Option1.Value = True Then
+rs!gender = "male"
+ElseIf Option2.Value = True Then
+rs!gender = "female"
+End If
+rs!total = Text3.Text
+rs!percentage = Text4.Text
+rs.Update
+con.Execute "commit"
+rs.Close
+Set rs = Nothing
+MsgBox "Added Successfully"
+End If
+End Sub
+
+
+
+Private Sub Command5_Click()
+Text1.Text = ""
+Text2.Text = ""
+Text3.Text = ""
+Text4.Text = ""
+End Sub
+
+Private Sub Command6_Click()
+End
+End Sub
+
+Private Sub Form_Load()
+Set con = New ADODB.Connection
+con.Open "Provider=MSDAORA.1;Password=bca3c55;User ID=bca3c55;Data Source=cas;Persist Security Info=True"
+con.CursorLocation = adUseClient
+MsgBox "Connection Established"
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+oracle table
+ create table details(regno number primary key,name varchar2(20),dob varchar2(16),gender varchar2(6),total number,percentage number);
