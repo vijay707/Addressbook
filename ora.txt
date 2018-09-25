@@ -1,0 +1,70 @@
+program - 2
+Create table library_master(accno number primary key,title varchar2(25),author varchar2(15),rate number);
+Create table library_trans(userid number,accno number references library_master(accno),dateofissue date,dateofreturn date);
+// insert 5 rows into library_master
+set linesize 75
+ttitle center 'LIBRARY MANAGEMENT'
+skip 1-
+center *****************
+column accno heading "Account number"
+column title heading 'Book name'
+column dateofissue heading 'ISSUE DATE'
+column dateofreturn heading 'RETURN DATE'
+set underline-
+break on row skip 1
+select m.accno,m.title,t.dateofissue from library_master m,library_trans t
+ where m.accno=t.accno and dateofreturn='5-jul-16'
+
+ Program - 4
+ Student table
+ passlist table
+ faillist table
+ declare
+ cursor std is select * from marks;
+ i number;
+ begin
+ for i in std loop
+ if(i.m1>=40 and i.m2>=40)
+ then
+ i.result:='pass';
+ else
+ i.result:='fail';
+ end if;
+ update student set total=i.m1+i.m2,avg=(total/2) where rno=i.rno;
+ 	if(i.result='pass') then
+ 	insert into passlist
+ 		end if
+ 		if(i.result='fail') then
+ 		insert into faillist
+ 			end if;
+ 			end loop;
+ 			end;
+
+
+ program - 5
+ create table bmaster (bid number primary key,bkname varchar2(10),noofitems number);
+ 	create table btrans(tid number primary key,bid number references bmaster(bid),nooforder number);
+ 		set serveroutput on;
+ 		create or replace trigger checks
+ 			before insert on btrans
+ 			for each row
+ 			declare
+ 			aa btrans.bid%type;
+ 			tt btrans.nooforder%type;
+ 			bb btrans.nooforder%type;
+ 			begin
+ 			select noofitems into aa from bmaster where bid=:new.bid;
+ 			dbms_output.put_line(aa);
+ 			bb:=:new.nooforder;
+ 			tt:=aa-bb;
+ 			dbms_output.put_line(tt);
+ 			if tt>0 then
+ 			update bmaster set noofitems = tt where bid=:new.bid;
+ 				dbms_output.put_line('Items ordered');
+ 				else
+ 				RAISE_APPLICATION_ERROR(-20202,'Stock is over');
+ 				end if;
+ 				end;
+
+
+
